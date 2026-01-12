@@ -244,7 +244,7 @@ print("14.---------------------------------------------------")
 print("15.---------------------------------------------------")
 print("-------------------------")
 # Iškritus herbui;
-sk = 0
+sk = 0 #skaiciuoju metimus
 for i in range(100): # pataisyti i while true
     metimas= random.randint(0,1)
     sk += 1
@@ -255,6 +255,18 @@ for i in range(100): # pataisyti i while true
         print("S")
 print("kelintu metimu iskrito herbas:",sk)
 print("a-------------------------")
+# for i in range(100): pakeista i while True:
+print("spresta_per_paskaita-------------------------")
+while True:
+    metimas = random.randint(0,1)
+    if metimas == 0:
+        print("H")
+        break
+    else:
+        print("S")
+
+print("----------------------------------------")
+
 # Tris kartus iškritus herbui;
 sk_herbu = 0
 sk_metimu = 0
@@ -268,6 +280,7 @@ for i in range(100): # apribota metimu imtis # pataisyti i while true
             break
     else:
         print("S")
+print()
 print("Per kiek metimu iskrito 3 herbai:", sk_metimu)
 print("b-------------------------")
 # Tris kartus iškritus herbui;
@@ -284,6 +297,46 @@ while sk_herbu < 3: # mes tol kol iskris trys herbai
     else:
         print("S")
 print("Per kiek metimu iskrito 3 herbai:", sk_metimu)
+print("spresta_per_paskaita-------------------------")
+print("----------------------------------------")
+# Tris kartus iškritus herbui; A
+count = 0
+while True:  # sustabdome metyma, kai herbas iskrenta tris kartus
+    coin = random.randint(0,1)
+    if coin == 0:
+        print("H")
+        count += 1
+        if count >= 3:
+            break
+    else:
+        print("S")
+print("----------------------------------------")
+
+# Tris kartus iškritus herbui; B
+count = 0
+while True:
+    coin = random.randint(0, 1)
+    if coin == 0:
+        print("H")
+        count += 1
+    else:
+        print("S")
+    if count >= 3:
+        break
+print("----------------------------------------")
+
+# Tris kartus iškritus herbui; C
+count = 0
+while count < 3:
+    coin = random.randint(0, 1)
+    if coin == 0:
+        print("H")
+        count += 1
+    else:
+        print("S")
+print("----------------------------------------")
+
+
 print("-------------------------")
 # Tris kartus iš eilės iškritus herbui;
 
@@ -316,6 +369,13 @@ while True: # mes tol kol iskris trys herbai is eiles
         print("S")
         sk_herbu_is_eile = 0
 print("Per kiek metimu iskrito 3 herbai is eiles:", sk_metimu)
+
+
+
+
+
+
+
 
 # 16. Kazys ir Petras žaidžia šaškėm. Petras surenka taškų kiekį nuo 10 iki 20, Kazys surenka taškų kiekį nuo 5 iki 25.
 # Vienoje eilutėje išvesti žaidėjų vardus su taškų kiekiu ir “Partiją laimėjo: ​laimėtojo vardas​”.
@@ -431,6 +491,5 @@ print("viso smugiu skaicius",Smugiu_skaicius)
 
 print("-------------------------")
 
-git config --global user.name "eugvaz"
-git config --global user.email "v.eugenija@gmail.com"
+
 
