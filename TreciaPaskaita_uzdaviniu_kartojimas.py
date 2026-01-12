@@ -300,38 +300,38 @@ print("Per kiek metimu iskrito 3 herbai:", sk_metimu)
 print("spresta_per_paskaita-------------------------")
 print("----------------------------------------")
 # Tris kartus iškritus herbui; A
-count = 0
+sk_herbu = 0
 while True:  # sustabdome metyma, kai herbas iskrenta tris kartus
-    coin = random.randint(0,1)
-    if coin == 0:
+    metimas = random.randint(0,1)
+    if metimas == 0:
         print("H")
-        count += 1
-        if count >= 3:
+        sk_herbu += 1
+        if sk_herbu >= 3:
             break
     else:
         print("S")
 print("----------------------------------------")
 
 # Tris kartus iškritus herbui; B
-count = 0
+sk_herbu = 0
 while True:
-    coin = random.randint(0, 1)
-    if coin == 0:
+    metimas = random.randint(0, 1)
+    if metimas == 0:
         print("H")
-        count += 1
+        sk_herbu += 1
     else:
         print("S")
-    if count >= 3:
+    if sk_herbu >= 3:
         break
 print("----------------------------------------")
 
 # Tris kartus iškritus herbui; C
-count = 0
-while count < 3:
-    coin = random.randint(0, 1)
-    if coin == 0:
+sk_herbu = 0
+while sk_herbu < 3:
+    metimas = random.randint(0, 1)
+    if metimas == 0:
         print("H")
-        count += 1
+        sk_herbu += 1
     else:
         print("S")
 print("----------------------------------------")
@@ -370,12 +370,21 @@ while True: # mes tol kol iskris trys herbai is eiles
         sk_herbu_is_eile = 0
 print("Per kiek metimu iskrito 3 herbai is eiles:", sk_metimu)
 
-
-
-
-
-
-
+print("spresta_per_paskaita-------------------------")
+count = 0
+count_h = 0
+while True:
+    coin = random.randint(0, 1)
+    count += 1
+    if coin == 0:
+        print("H")
+        count_h += 1
+    else:
+        print("S")
+        count_h = 0
+    if count_h >= 3:
+        break
+print(count,count_h)
 
 # 16. Kazys ir Petras žaidžia šaškėm. Petras surenka taškų kiekį nuo 10 iki 20, Kazys surenka taškų kiekį nuo 5 iki 25.
 # Vienoje eilutėje išvesti žaidėjų vardus su taškų kiekiu ir “Partiją laimėjo: ​laimėtojo vardas​”.
@@ -386,24 +395,24 @@ print("-------------------------")
 Petro_taskai_viso = 0
 Kazio_taskai_viso = 0
 partijos = 0
-while Kazio_taskai_viso < 222 and Petro_taskai_viso < 222:
+while Kazio_taskai_viso < 222 and Petro_taskai_viso < 222: # sita vieta pasikoreguoti pagal while true
     Petro_taskai = random.randint(10, 20)
-    print("Petro taskai",Petro_taskai)
+    #print("Petro taskai",Petro_taskai)
     Kazio_taskai = random.randint(5, 25)
-    print("Kazio taskai",Kazio_taskai)
+    #print("Kazio taskai",Kazio_taskai)
     Petro_taskai_viso += Petro_taskai
-    print("Visi Petro taskai", Petro_taskai_viso)
+    #print("Visi Petro taskai", Petro_taskai_viso)
     Kazio_taskai_viso += Kazio_taskai
-    print("Visi Kazio taskai", Kazio_taskai_viso)
+    #print("Visi Kazio taskai", Kazio_taskai_viso)
     if Petro_taskai != Kazio_taskai:
         partijos += 1
         #print(partijos)
         if Petro_taskai > Kazio_taskai:
-            print( "Partiją laimėjo:",partijos,"Petras")
+            print( "Partiją laimėjo:",partijos,"Petras", Petro_taskai,">", Kazio_taskai,".Bendras tasku skaicius: P =",Petro_taskai_viso,", K =", Kazio_taskai_viso)
         else:
-            print("Partiją laimėjo:",partijos,"Kazys")
+            print("Partiją laimėjo:",partijos,"Kazys", Kazio_taskai, ">", Petro_taskai,".Bendras tasku skaicius: P =",Petro_taskai_viso,", K =", Kazio_taskai_viso)
     else:
-        print("Lygu. Abu surinko po tiek pat tasku:", "Petras",Petro_taskai,"Kazys", Kazio_taskai)
+        print("Lygu.",partijos," Abu surinko po tiek pat tasku:", "Petras",Petro_taskai,"=","Kazys", Kazio_taskai)
 print()
 if Petro_taskai_viso != Kazio_taskai_viso:
     if Petro_taskai_viso> Kazio_taskai_viso:
@@ -412,6 +421,31 @@ if Petro_taskai_viso != Kazio_taskai_viso:
         print("Zaidima laimėjo Kazys")
 else:
     print("Zaidimas baigesi lygiosiomis")
+print()
+
+
+print("spresta_per_paskaita-------------------------")
+k_pts_t = 0
+p_pts_t = 0
+while True:
+    k_pts = random.randint(5,25)
+    p_pts = random.randint(10,20)
+    k_pts_t += k_pts
+    p_pts_t += p_pts
+    if k_pts > p_pts:
+        print(f'Partiją laimėjo Kazys su taškų persvara {k_pts} > {p_pts}. bendras taškų balansas P:{p_pts_t}, K:{k_pts_t}')
+    elif p_pts > k_pts:
+        print(f'Partiją laimėjo Petras su taškų persvara {p_pts} > {k_pts}. bendras taškų balansas P:{p_pts_t}, K:{k_pts_t}')
+    else:
+        print(f'Partija baigėsi lygiosiomis abiems žaidėjams surinkus po {p_pts} taškų.')
+    if k_pts_t >= 222 or p_pts_t >= 222:
+        break
+if k_pts_t > p_pts_t:
+    print("Žaidimą laimėjo Kazys")
+elif p_pts_t > k_pts_t:
+    print("Žaidimą laimėjo Petras")
+else:
+    print("Žaidimas baigėsi lygiosiomis")
 
 
 # 17. Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite pasinaudodami random.randint(x,x) funkcija.
@@ -490,6 +524,53 @@ print("viso smugiu skaicius",Smugiu_skaicius)
 #print("Ikalta viso viniu:", Ikalta_viniu)
 
 print("-------------------------")
+print("spresta_per_paskaita-------------------------")
+total_count = 0
+for i in range(5):
+    count = 0
+    nail_length = 85
+    total_taukst = 0
+    while total_taukst < nail_length:
+        taukst = random.randint(5,20)
+        total_taukst += taukst
+        count += 1
+        # print(total_taukst)
+    total_count += count
+    print(f'Vinį įkalėme {count} smūgiais, iš viso sukalta {total_taukst}mm.')
+print(f'Iš viso prireikė {total_count} smūgių')
 
 
+# “Įkalkite” 5 vinis dideliais smūgiais. Vienas smūgis vinį įkala 20-30 mm, bet yra 50% tikimybė (pasinaudokite random.randint(x,x) funkcija tikimybei sumodeliuoti), kad smūgis nepataikys į vinį. Suskaičiuokite kiek reikia smūgių.
+total_count = 0
+for i in range(5):
+    count = 0
+    nail_length = 85
+    total_taukst = 0
+    while total_taukst < nail_length:
+        count += 1
+        if random.randint(0,1) == 0:
+             continue
+        taukst = random.randint(20,30)
+        total_taukst += taukst
+        # print(total_taukst)
+    total_count += count
+    print(f'Vinį įkalėme {count} smūgiais, iš viso sukalta {total_taukst}mm.')
+print(f'Iš viso prireikė {total_count} smūgių')
+print("----------------------------------------")
+
+total_count = 0
+for i in range(5):
+    count = 0
+    nail_length = 85
+    total_taukst = 0
+    while total_taukst < nail_length:
+        count += 1
+        taukst = random.randint(20,30) * random.randint(0,1)
+        total_taukst += taukst
+        # print(total_taukst)
+    total_count += count
+    print(f'Vinį įkalėme {count} smūgiais, iš viso sukalta {total_taukst}mm.') # komentaras
+print(f'Iš viso prireikė {total_count} smūgių')
+print('Dovilės kodas')
+print()
 
