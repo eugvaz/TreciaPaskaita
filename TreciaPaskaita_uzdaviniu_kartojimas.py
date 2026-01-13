@@ -477,7 +477,7 @@ Ikalta_viniu = 0
 Smugiu_skaicius = 0
 
 
-for Vinis in range(5): # ciklas sukasi 5 kartus, nes kalame 5 vinis
+for Vinis in range(1,6): # ciklas sukasi 5 kartus, nes kalame 5 vinis
     Ikalta_vinis = 0
     Smugiai_siai_viniai_kalti = 0
     print("Kalama vinis:", Vinis)
@@ -491,7 +491,7 @@ for Vinis in range(5): # ciklas sukasi 5 kartus, nes kalame 5 vinis
     print("Smugiu skaicius: ", Smugiai_siai_viniai_kalti)
 print()
 print("viso smugiu skaicius",Smugiu_skaicius)
-print("Ikalta viso viniu:", Ikalta_viniu)
+#print("Ikalta viso viniu:", Ikalta_viniu)
 
 print("-------------------------")
 print("-------------------------")
@@ -501,7 +501,7 @@ Vienas_ikaltas_vinis = 85
 Smugiu_skaicius = 0
 
 
-for Vinis in range(5): # ciklas sukasi 5 kartus, nes kalame 5 vinis
+for Vinis in range(1,6): # ciklas sukasi 5 kartus, nes kalame 5 vinis
     Ikalta_vinis = 0
     Smugiai_siai_viniai_kalti = 0
     print("Kalama vinis:", Vinis)
@@ -515,7 +515,7 @@ for Vinis in range(5): # ciklas sukasi 5 kartus, nes kalame 5 vinis
             Ikalta_vinis += Vinies_ikalimo_gylis
             Ikalta_viniu += Vinies_ikalimo_gylis
             #Smugiai_siai_viniai_kalti += 1
-            print(Vinis,"Ikalta vinis:",Ikalta_vinis)
+            #print(Vinis,"Ikalta vinis:",Ikalta_vinis)
             print("Smugiu skaicius: ", Smugiai_siai_viniai_kalti)
         else:
             print("nepataike i vini")
@@ -525,9 +525,10 @@ print("viso smugiu skaicius",Smugiu_skaicius)
 
 print("-------------------------")
 print("spresta_per_paskaita-------------------------")
-total_count = 0
+# kalama 1 vinis
+total_count = 0 # viso smugiu skaicius
 for i in range(5):
-    count = 0
+    count = 0 # vienos vinies smugiai
     nail_length = 85
     total_taukst = 0
     while total_taukst < nail_length:
@@ -540,7 +541,9 @@ for i in range(5):
 print(f'Iš viso prireikė {total_count} smūgių')
 
 
-# “Įkalkite” 5 vinis dideliais smūgiais. Vienas smūgis vinį įkala 20-30 mm, bet yra 50% tikimybė (pasinaudokite random.randint(x,x) funkcija tikimybei sumodeliuoti), kad smūgis nepataikys į vinį. Suskaičiuokite kiek reikia smūgių.
+# “Įkalkite” 5 vinis dideliais smūgiais. Vienas smūgis vinį įkala 20-30 mm,
+# bet yra 50% tikimybė (pasinaudokite random.randint(x,x) funkcija tikimybei sumodeliuoti),
+# kad smūgis nepataikys į vinį. Suskaičiuokite kiek reikia smūgių.
 total_count = 0
 for i in range(5):
     count = 0
@@ -556,8 +559,8 @@ for i in range(5):
     total_count += count
     print(f'Vinį įkalėme {count} smūgiais, iš viso sukalta {total_taukst}mm.')
 print(f'Iš viso prireikė {total_count} smūgių')
-print("----------------------------------------")
 
+print("----------------------------------------")
 total_count = 0
 for i in range(5):
     count = 0
@@ -565,12 +568,11 @@ for i in range(5):
     total_taukst = 0
     while total_taukst < nail_length:
         count += 1
-        taukst = random.randint(20,30) * random.randint(0,1)
+        taukst = random.randint(20,30) * random.randint(0,1) # skaiciuojama su tikimybe: jei pataike , tai *1, nepataike *0
         total_taukst += taukst
         # print(total_taukst)
     total_count += count
     print(f'Vinį įkalėme {count} smūgiais, iš viso sukalta {total_taukst}mm.') # komentaras
 print(f'Iš viso prireikė {total_count} smūgių')
-print('Dovilės kodas')
 print()
 
